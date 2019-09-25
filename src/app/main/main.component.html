@@ -1,0 +1,43 @@
+<nb-layout>
+    <nb-layout-header>Awesome Company</nb-layout-header>
+
+    <nb-layout-column style="background: rgb(218, 150, 150);" class="colored-column-warning">
+        <app-loading *ngIf="showSpinner,else content"></app-loading>
+        <ng-template #content>
+            <nb-card *ngFor="let item of items | async" [status]="item.noStudent==true? 'success' : 'danger'">
+                <nb-card-header>{{ item.name}}</nb-card-header>
+                <nb-card-body>
+                    {{ item.content}}
+                </nb-card-body>
+                <nb-card-footer>{{ item.author}}</nb-card-footer>
+            </nb-card>
+        </ng-template>
+    </nb-layout-column>
+    <nb-layout-column class="colored-column-danger">
+        <form (ngSubmit)="onSubmit(f)" #f='ngForm'>
+            <nb-card>
+                <nb-card-body class="example-items-col">
+                    <input name="name" ngModel type="text" nbInput fullWidth shape="round" placeholder="Round" required>
+                    <br>
+                    <br>
+                    <textarea name="desc" ngModel nbInput fullWidth shape="round" placeholder="Textarea" required>
+            </textarea>
+                    <br>
+                    <br>
+                    <input name="author" ngModel type="text" nbInput fullWidth shape="round" placeholder="Round"
+                        required>
+                    <br>
+                    <br>
+                    <span class="caption-2 text-hint">Are You a Student</span>
+                    <br>
+                    <br>
+                    <nb-toggle name="wasStudent" ngModel status="info"></nb-toggle>
+                </nb-card-body>
+                <nb-card-body class="example-items-rows">
+                    <button [disabled]="!f.valid" type="submit" style="margin-right:10px;" nbButton hero
+                        status="success">Success</button>
+                </nb-card-body>
+            </nb-card>
+        </form>
+    </nb-layout-column>
+</nb-layout>

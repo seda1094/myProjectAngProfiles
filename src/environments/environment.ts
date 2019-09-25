@@ -6,16 +6,16 @@ export const environment = {
   production: false,
   firebase : {
       // Your web app's Firebase configuration
-    apiKey: "AIzaSyD2xexfH_pE3QUzUypl6zjZBZmkv1Nq2r8",
-    authDomain: "firestartedprod-fa7c8.firebaseapp.com",
-    databaseURL: "https://firestartedprod-fa7c8.firebaseio.com",
-    projectId: "firestartedprod-fa7c8",
-    storageBucket: "",
-    messagingSenderId: "286791663601",
-    appId: "1:286791663601:web:fe48305641d67b3ed20e50"
-  
-  }}
-
+      apiKey: "AIzaSyA0HNhlxwik8WVBLceKIGSefBkAQCj7IQA",
+      authDomain: "tasks-d49c7.firebaseapp.com",
+      databaseURL: "https://tasks-d49c7.firebaseio.com",
+      projectId: "tasks-d49c7",
+      storageBucket: "",
+      messagingSenderId: "346469576508",
+      appId: "1:346469576508:web:a50fc1b5330025054e7839",
+      measurementId: "G-Y2DH6Y0NEK"
+}
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

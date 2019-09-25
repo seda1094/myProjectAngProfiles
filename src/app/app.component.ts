@@ -1,26 +1,16 @@
-import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'fire';
-
-  items: Observable<any[]>;
-  constructor(public db: AngularFireDatabase){
-    this.items = db.list('items').valueChanges();
-  }
-  onSubmit(data:NgForm){
-    this.db.list('items').push({name: data.value.name,
-                                content: data.value.desc,
-                                author: data.value.author,
-                                noStudent: data.value.wasStudent});
-                                console.log(data.value.wasStudent);
-                                
+export class AppComponent implements OnInit{
+  ngOnInit(){
+    firebase.initializeApp({
+      apiKey: "AIzaSyD2xexfH_pE3QUzUypl6zjZBZmkv1Nq2r8",
+      authDomain: "firestartedprod-fa7c8.firebaseapp.com",
+    })
   }
 }

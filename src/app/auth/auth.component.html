@@ -1,0 +1,36 @@
+<nb-layout center>
+    <nb-layout-header>Awesome Company</nb-layout-header>
+  
+    <nb-layout-column>
+        <nb-card status="success">
+            <nb-card-header>SignUp</nb-card-header>
+            <nb-card-body>
+                <form (ngSubmit)="signUp(f)" #f="ngForm">
+                    <br><br>
+                    <input type="text" nbInput fullWidth shape="round" placeholder="mail" name="email" ngModel required><br><br>
+                    <input type="password" nbInput fullWidth shape="round" placeholder="password" name="password" ngModel required><br><br>
+                    <!-- <input type="submit" nbButton value="SignUp" [disabled] = "!f.valid"/><br><br> -->
+                    <button type="submit" nbButton [disabled]="!f.valid" >SignUp</button><br><br>
+                </form>
+            </nb-card-body>
+            <nb-card-footer>By Wikipedia</nb-card-footer>
+          </nb-card>
+    </nb-layout-column>
+
+    <nb-layout-column>
+        <nb-card status="success">
+            <nb-card-header>LogIn</nb-card-header>
+            <nb-card-body>
+              <form (ngSubmit)="logIn(g)" #g="ngForm">
+                <br><br>
+                <input type="text" nbInput fullWidth shape="round" placeholder="mail" name="email" ngModel required><br><br>
+                <input type="password" nbInput fullWidth shape="round" placeholder="password" name="password" ngModel required><br><br>
+                <input type="submit" nbButton value="LogIn" [disabled]="!g.valid"/><br><br>
+              </form>
+            </nb-card-body>
+            <nb-card-footer>By Wikipedia</nb-card-footer>
+          </nb-card>
+    </nb-layout-column>
+  
+    <nb-layout-footer>Contact us</nb-layout-footer>
+  </nb-layout>
